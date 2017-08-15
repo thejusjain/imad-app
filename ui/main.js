@@ -19,7 +19,7 @@ button.onclick = function (){
   };
   
   //make the request
-  request.open('GET','http://http://thejusjain101.imad.hasura-app.io/counter',true);
+  request.open('GET','http://thejusjain101.imad.hasura-app.io/counter',true);
   request.send(null);
  
   
