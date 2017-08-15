@@ -5,20 +5,40 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-var articleOne = {
-  title =  'Article One | Thejus Jain',
-  heading = 'Article One',
-  date = 'August 15 2017',
-  content =  
-                `<p>
-                    This is some content. This is some content.This is some content.This is some content.This is some content.This is some content.This is some content.This is some content.This is some content.This is some content.This is some content.This is some content.This is some content.This is some content.This is some content.This is some content.This is some content.
-                </p>
-                <p>
-                    This is some content.This is some content.This is some content.This is some content.This is some content.This is some content.This is some content.This is some content.This is some content.This is some content.This is some content.
-                </p>
-                <p>
-                    This is some content.This is some content.This is some content.This is some content.This is some content.This is some content.This is some content.This is some content.This is some content.This is some content.This is some content.
-                </p>`
+var articles = { 
+    articleOne : {
+      title :  'Article One | Thejus Jain',
+      heading : 'Article One',
+      date : 'August 15 2017',
+      content :  
+                    `<p>
+                        This is some content. This is some content.This is some content.This is some content.This is some content.This is some content.This is some content.This is some content.This is some content.This is some content.This is some content.This is some content.This is some content.This is some content.This is some content.This is some content.This is some content.
+                    </p>
+                    <p>
+                        This is some content.This is some content.This is some content.This is some content.This is some content.This is some content.This is some content.This is some content.This is some content.This is some content.This is some content.
+                    </p>
+                    <p>
+                        This is some content.This is some content.This is some content.This is some content.This is some content.This is some content.This is some content.This is some content.This is some content.This is some content.This is some content.
+                    </p>`
+    },
+    articleTwo : {
+      title :  'Article Two | Thejus Jain',
+      heading : 'Article Two',
+      date : 'August 20 2017',
+      content :  
+                    `<p>
+                        This is some content for the second page.
+                    </p>`
+    },
+    articleThree : {
+      title :  'Article Three | Thejus Jain',
+      heading : 'Article Three',
+      date : 'August 15 2017',
+      content :  
+                    `<p>
+                        This is some content for the third page.
+                    </p>`
+    }
 };
 
 
@@ -71,11 +91,11 @@ app.get('/article-one', function(req,res) {
 });
 
 app.get('/article-two', function(req,res) {
-   res.sendFile(path.join(__dirname, 'ui', 'article-two.html'));
+   res.send(createTemplate(articleTwo));
 });
 
 app.get('/article-three', function(req,res) {
-   res.sendFile(path.join(__dirname, 'ui', 'article-three.html'));
+   res.send(createTemplate(articleThree));
 });
 
 app.get('/ui/style.css', function (req, res) {
