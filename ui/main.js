@@ -24,8 +24,7 @@ button.onclick = function (){
 };
 
 
-var nameInput = document.getElementById('name');
-var name = nameInput.value; 
+
 var submit = document.getElementById('sub_btn');
 submit.onclick = function () {
 
@@ -52,10 +51,12 @@ submit.onclick = function () {
   };
   
   //make the request
-  request.open('GET','http://thejusjain101.imad.hasura-app.io/submit-name?name=' + name, true);
+  request.open('GET','http://thejusjain101.imad.hasura-app.io/submit-name?name=' + inputName, true);
   request.send(null);
     //make a request
 
+    var nameInput = document.getElementById('name');
+    var inputName = nameInput.value; 
     //capture the list of names and render it 
     var names = ['name1', 'name2', 'name3','name4'];
     var list = '';
