@@ -13,9 +13,9 @@ button.onclick = function(){
                 span.innerHTML = counter.toString();    
             }
         }
-    }
+    };
   //make the request
     request.open('GET', 'http://thejusjain101.imad.hasura-app.io/counter', true);
     request.send(null);
     
-}
+};
