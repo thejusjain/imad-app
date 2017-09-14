@@ -6,9 +6,9 @@ button.onclick = function(){
     
     //capture vthe response to a variable
     request.onreadystatechange = function(){
-        if(request.readystate === XMLHttpRequest.DONE){
+        if(request.readyState === XMLHttpRequest.DONE){
             if(request.status === 200){
-                var counter = request.responseText;                alert('counter incremented');
+                var counter = request.responseText; 
                 var span = document.getElementById('count');
                 span.innerHTML = counter.toString();    
             }
