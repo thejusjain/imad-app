@@ -13,12 +13,12 @@ button.onclick = function(){
                 span.innerHTML = counter.toString();    
             }
         }
-    }
+    };
   //make the request
     request.open('GET', 'http://thejusjain101.imad.hasura-app.io/counter', true);
     request.send(null);
     
-}
+};
 
 //submit name and display
 
@@ -45,7 +45,7 @@ submit.onclick = function(){
             }
         }
     };
-    var nameInput = document.getElementById('name');
+    var nameInput = document.getElementById('input_name');
     var name = nameInput.value;
     //make the request
     request.open('GET', 'http://thejusjain101.imad.hasura-app.io/submit-name?name=' + name,true);
