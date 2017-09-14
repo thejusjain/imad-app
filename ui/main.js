@@ -26,16 +26,31 @@ var nameInput = document.getElementById('name');
 var iName = nameInput.value;
 var submit = document.getElementById('sub_btn');
 submit.onclick = function(){
-    //make request to the server 
+     //create the request to the server
+    var request = new XMLHttpRequest();
     
-    //get the names and render it into the html
-    var listItems = ['name1','name2','name3','name4'];
-    list = '';
-    
-    for(var i = 0; i < listItems.length; i++) {
-        list += '<li>' + listItems[i] + '</li>';
+    //capture vthe response to a variable
+    request.onreadystatechange = function(){
+        if(request.readyState === XMLHttpRequest.DONE){
+            if(request.status === 200){
+                //get the names and render it into the html
+                var names = request.responseText;
+                names = JSON.parse(names);
+                list = '';
+                
+                for(var i = 0; i < listItems.length; i++) {
+                    list += '<li>' + listItems[i] + '</li>';
+                }
+                
+                var ul = document.getElementById('list');
+                ul.innerHTML = list;
+            }
+        }
     }
+  //make the request
+    request.open('GET', 'http://thejusjain101.imad.hasura-app.io/submit-name?name=' + iName, true);
+    request.send(null);
     
-    var ul = document.getElementById('list');
-    ul.innerHTML = list;
+    
+   
 }
