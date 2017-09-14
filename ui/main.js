@@ -45,9 +45,9 @@ submit.onclick = function(){
         }
     }
     var nameInput = document.getElementById('name');
-    var iName = nameInput.value;
+    var name = nameInput.value;
     //make the request
-    request.open('GET', 'http://thejusjain101.imad.hasura-app.io/submit-name?name=' + iName, true);
+    request.open('GET', 'http://thejusjain101.imad.hasura-app.io/submit-name?name=' + name,true);
     request.send(null);
     
     
