@@ -14,7 +14,16 @@ var articles ={
         <p>
             This is the article one     This is the article one     This is the article one     This is the article one     This is the article one     This is the article one     This is the article one     This is the article one     This is the article one     This is the article one     This is the article one     This is the article one     This is the article one     This is the article one     This is the article one 
         </p>`
-    }
+    },
+    articleTwo : {
+      title: 'Thejus Jain | article two',
+      heading: 'Hi this is article two',
+      date: 'August 13, 2017',
+      content: `
+        <p>
+            This is the article two
+        </p>`
+    },
     };
 /*var articles = {
     'article-one': {
