@@ -23,7 +23,7 @@ var articles ={
         <p>
             This is the article two
         </p>`
-    },
+    }
     };
 /*var articles = {
     'article-one': {
