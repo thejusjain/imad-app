@@ -6,27 +6,7 @@ var app = express();
 app.use(morgan('combined'));
 
 var articles ={
-    articleOne : {
-      title: 'Thejus Jain | article one',
-      heading: 'Hi this is article one',
-      date: 'September 13, 2017',
-      content: `
-        <p>
-            This is the article one     This is the article one     This is the article one     This is the article one     This is the article one     This is the article one     This is the article one     This is the article one     This is the article one     This is the article one     This is the article one     This is the article one     This is the article one     This is the article one     This is the article one 
-        </p>`
-    },
-    articleTwo : {
-      title: 'Thejus Jain | article two',
-      heading: 'Hi this is article two',
-      date: 'August 13, 2017',
-      content: `
-        <p>
-            This is the article two
-        </p>`
-    }
-    };
-/*var articles = {
-    'article-one': {
+    'article-one' : {
       title: 'Thejus Jain | article one',
       heading: 'Hi this is article one',
       date: 'September 13, 2017',
@@ -53,7 +33,7 @@ var articles ={
             This is the content for article three.
         </p>`
     }
-};*/
+    };
 
 function createTemplate (data) {
     var title = data.title;
