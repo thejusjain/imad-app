@@ -36,9 +36,7 @@ submit.onclick = function(){
                 //get the names and render it into the html
                 var names = request.responseText;
                 names = JSON.parse(names);
-                list = '';
-                
-                for(var i = 0; i < listItems.length; i++) {
+                for(var i = 0; i < names.length; i++) {
                     list += '<li>' + listItems[i] + '</li>';
                 }
                 
