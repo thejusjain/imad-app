@@ -22,8 +22,7 @@ button.onclick = function(){
 
 //submit name and display
 
-var nameInput = document.getElementById('name');
-var iName = nameInput.value;
+
 var submit = document.getElementById('sub_btn');
 submit.onclick = function(){
      //create the request to the server
@@ -45,7 +44,9 @@ submit.onclick = function(){
             }
         }
     }
-  //make the request
+    var nameInput = document.getElementById('name');
+    var iName = nameInput.value;
+    //make the request
     request.open('GET', 'http://thejusjain101.imad.hasura-app.io/submit-name?name=' + iName, true);
     request.send(null);
     
