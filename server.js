@@ -14,10 +14,10 @@ var config = {
 var app = express();
 app.use(morgan('combined'));
 
-var Pool = new Pool(config);
+var pool = new Pool(config);
 app.get('/test-db', function(){
    //make a select request and displays the results
-   Pool.query('SELECT * FROM test', function (err, result){
+   pool.query('SELECT * FROM test', function (err, result){
        if(err){
            res.status(500).send(err.toString());
        }
