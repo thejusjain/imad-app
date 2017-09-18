@@ -17,7 +17,7 @@ app.use(morgan('combined'));
 var Pool = new Pool(config);
 app.get('/test-db', function(){
    //make a select request and displays the results
-   pool.query('SELECT * FROM test', function (err, result){
+   Pool.query('SELECT * FROM test', function (err, result){
        if(err){
            res.status(500).send(err.toString());
        }
