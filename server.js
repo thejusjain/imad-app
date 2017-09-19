@@ -15,7 +15,7 @@ var app = express();
 app.use(morgan('combined'));
 
 var pool = new Pool(config);
-app.get('/test-db', function(){
+app.get('/test-db', function(req, res){
    //make a select request and displays the results
    pool.query('SELECT * FROM test', function (err, result){
        if(err){
